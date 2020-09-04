@@ -13,10 +13,10 @@ namespace UseAutoFac
             Console.WriteLine("B ctor");
         }
 
-        public static B CreateB(IA ia)
-        {
-            return new B(ia);
-        }
+        //public static B CreateB(IA ia)
+        //{
+        //    return new B(ia);
+        //}
 
         public void Fb()
         {

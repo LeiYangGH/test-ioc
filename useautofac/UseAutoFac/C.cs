@@ -4,11 +4,16 @@ using System.Text;
 
 namespace UseAutoFac
 {
-  public  class C
+    public class C
     {
-        public C()
+        public C(Func<IA, B> factory)
         {
-
+            Console.WriteLine("C ctor");
+            Console.WriteLine(factory);
+        }
+        public void Fc()
+        {
+            Console.WriteLine("Fc");
         }
     }
 }

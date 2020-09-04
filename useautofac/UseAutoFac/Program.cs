@@ -8,6 +8,7 @@ namespace UseAutoFac
         private static IContainer Container { get; set; }
         static IA ia;
         static B b;
+        static C c;
 
         static void Main(string[] args)
         {
@@ -16,6 +17,7 @@ namespace UseAutoFac
 
             builder.RegisterType<A>().As<IA>();
             builder.RegisterType<B>().As<B>();
+            builder.RegisterType<C>().As<C>();
 
             Container = builder.Build();
             using (var scope = Container.BeginLifetimeScope())
@@ -24,6 +26,8 @@ namespace UseAutoFac
                 ia.Fa();
                 b = scope.Resolve<B>();
                 b.Fb();
+                c = scope.Resolve<C>();
+                c.Fc();
             }
             Console.WriteLine("Hello World!");
         }
