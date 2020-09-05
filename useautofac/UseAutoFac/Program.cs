@@ -15,17 +15,19 @@ namespace UseAutoFac
 
             ContainerBuilder builder = new ContainerBuilder();
 
-            builder.RegisterType<A>().As<IA>();
-            builder.RegisterType<B>().As<B>();
+            builder.RegisterType<A1>().As<IA>();
+            builder.RegisterType<A2>().As<IA>();
+            builder.RegisterType<B1>().As<IB>();
+            builder.RegisterType<B2>().As<IB>();
             builder.RegisterType<C>().As<C>();
 
             Container = builder.Build();
             using (var scope = Container.BeginLifetimeScope())
             {
-                ia = scope.Resolve<IA>();
-                ia.Fa();
-                b = scope.Resolve<B>();
-                b.Fb();
+                //ia = scope.Resolve<IA>();
+                //ia.Fa();
+                //b = scope.Resolve<B>();
+                //b.Fb();
                 c = scope.Resolve<C>();
                 c.Fc();
             }
